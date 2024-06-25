@@ -1,3 +1,3 @@
-# Push_Swap_K_Short
+# Push_Swap_K_Sort
 
 Este readme es provisional :D
