@@ -19,23 +19,24 @@ YELLOW =		\033[0;93m
 RESET=			\033[0m
 
 SRCS :=	 $(addprefix sources/, \
-	core/main.c core/utils.c	parsing/parse.c)
+	core/main.c core/utils.c	parsing/parse.c	parsing/parse_utils.c	parsing/parse_overflow.c)
 
 SRCS_LIB := $(addprefix ./libft/, \
-	ft_printf.c	ft_putchar.c	ft_puthexadecimal.c	ft_putnbr.c\
+	ft_printf.c	ft_putchar.c	ft_isdigit.c	ft_puthexadecimal.c	ft_putnbr.c\
 	ft_putpadress.c	ft_putstr.c	ft_putunbr.c	ft_split.c	ft_strlen.c\
-	ft_atoi.c	ft_lstadd_back_bonus.c	ft_lstadd_front_bonus.c	ft_lstclear_bonus.c\
+	ft_atoi.c	ft_atoll.c	ft_lstadd_back_bonus.c	ft_lstadd_front_bonus.c	ft_lstclear_bonus.c\
 	ft_lstlast_bonus.c	ft_lstnew_bonus.c	ft_lstsize_bonus.c)
 
 OBJS = $(SRCS:.c=.o) $(SRCS_LIB:.c=.o)
 
-$(NAME) :  print_title $(OBJS) $(MLX_PATH)
+$(NAME) : $(OBJS)
+	make print_title
 	@echo "$(GREEN)Creando ejecutable"
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@echo "Ejecutable Creado$(RESET)"
 
 
-all : print_title $(NAME)
+all : $(NAME) print_title 
 
 print_title:
 	echo "$(PURPLE)██████╗ ██╗   ██╗███████╗██╗  ██╗        ███████╗██╗    ██╗ █████╗ ██████╗ "
@@ -53,5 +54,5 @@ fclean : clean
 
 re : fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re print_title
 .SILENT: print_title

@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 09:09:53 by dgargant          #+#    #+#             */
-/*   Updated: 2024/06/26 11:39:49 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/11 10:15:59 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ typedef struct s_list
 
 size_t	ft_strlen(const char *s);
 
+int	ft_isdigit(int c);
+
 int	ft_atoi(const char *str);
+
+long long	ft_atoll(const char *str);
 
 char	**ft_split(char const *s, char c);
 
