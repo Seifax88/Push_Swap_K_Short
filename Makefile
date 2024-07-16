@@ -19,7 +19,8 @@ YELLOW =		\033[0;93m
 RESET=			\033[0m
 
 SRCS :=	 $(addprefix sources/, \
-	core/main.c core/utils.c	parsing/parse.c	parsing/parse_utils.c	parsing/parse_overflow.c)
+	core/main.c core/utils.c	parsing/parse.c	parsing/parse_utils.c	parsing/parse_overflow.c\
+	parsing/parse_lst.c)
 
 SRCS_LIB := $(addprefix ./libft/, \
 	ft_printf.c	ft_putchar.c	ft_isdigit.c	ft_puthexadecimal.c	ft_putnbr.c\

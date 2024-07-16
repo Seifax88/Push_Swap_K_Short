@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 12:43:40 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/16 11:07:10 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/16 12:34:41 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,5 @@ void	parse_init(char **argv, t_list **stack_a)
 {
 	check_letrs(argv);
 	parse_split(argv, stack_a);
-	//checkers en stack_a
-		//funcion que chequea duplicados
-		//funcion que chequea que ya esten ordenados
+	check_duplicates(*stack_a);
 }
