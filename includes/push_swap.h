@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 10:59:12 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/12 11:28:22 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/16 09:43:58 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,20 @@
 
 int	main(int argc, char **argv);
 
-void	parse_init(char **argv);
+void	parse_init(char **argv, t_list **stack_a);
 
 void	check_letrs(char **argv);
 
 void	print_error();
 
-void	nums_are_ok(char **nums);
+int	nums_are_ok(char **nums);
 
-void	check_overflow(char *nums);
+int	check_overflow(char *nums);
+
+void	parse_split(char **argv, t_list **stack_a);
+
+void	*free_array(char **array);
+
+void	insert_nums(char **nums, t_list **stack_a);
 
 #endif

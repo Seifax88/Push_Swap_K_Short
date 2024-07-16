@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 12:43:40 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/12 11:36:00 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/16 11:07:10 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@ void	check_letrs(char **argv)
 	j = 0;
 	while (argv[i] != NULL)
 	{
-		//ft_printf("%s \n", argv[i]);
 		while (argv[i][j] != '\0')
 		{
-			//ft_printf("%c %d \n", argv[i][j], i);
 			if ( !(ft_isdigit(argv[i][j])) && (argv[i][j] != ' ')
 				&& (argv[i][j] != '-') && (argv[i][j] != '+'))
 				print_error();
@@ -36,16 +34,11 @@ void	check_letrs(char **argv)
 	}
 }
 
-// funcion que pase atoi y atoll a cada puntero del split
-	// comprobar si el numero tiene un signo despues
-	// si atoi y atoll devuelven algo distinto devolvera error
-	// hacer atoll (debe devolver 1 para la comparacion con atoi)
-
-void	nums_are_ok(char **nums)
+int	nums_are_ok(char **nums)
 {
 	int i;
 	int j;
-	
+
 	i = 0;
 	j = 0;
 	while (nums[i] != NULL)
@@ -53,17 +46,42 @@ void	nums_are_ok(char **nums)
 		while (nums[i][j] != '\0')
 		{
 			if (!(ft_isdigit(nums[i][j + 1])) && (nums[i][j + 1] != '\0'))
-				print_error();
+				return (1);
 			j++;
 		}
 		j = 0;
-		check_overflow(nums[i]);
+		if (check_overflow(nums[i]))
+			return (1);
 		i++;
 	}
-	
+	return (0);
 }
 
-void	parse_split(char **argv)
+void	insert_nums(char **nums, t_list **stack_a)
+{
+	int		i;
+	int		*num;
+	t_list	*node;
+
+	i = 0;
+	while (nums[i] != NULL)
+	{
+		num = malloc(sizeof(int));
+		*num = ft_atoi(nums[i]);
+		node = ft_lstnew(num);
+		if (!node)
+		{
+			ft_lstclear(stack_a, free);
+			free_array(nums);
+			free(nums);
+			print_error();
+		}
+		ft_lstadd_back(stack_a, node);
+		i++;
+	}
+}
+
+void	parse_split(char **argv, t_list **stack_a)
 {
 	int 	i;
 	char 	**nums;
@@ -73,13 +91,25 @@ void	parse_split(char **argv)
 	while (argv[i] != NULL)
 	{
 		nums = ft_split(argv[i], ' ');
-		nums_are_ok(nums);
+		if (nums_are_ok(nums))
+		{
+			free_array(nums);
+			print_error();
+		}
+		else
+		{
+			insert_nums(nums, stack_a);
+			free_array(nums);
+		}
 		i++;
 	}
 }
 
-void	parse_init(char **argv)
+void	parse_init(char **argv, t_list **stack_a)
 {
 	check_letrs(argv);
-	parse_split(argv);
+	parse_split(argv, stack_a);
+	//checkers en stack_a
+		//funcion que chequea duplicados
+		//funcion que chequea que ya esten ordenados
 }
