@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 12:43:40 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/16 12:34:41 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/18 15:16:01 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	check_letrs(char **argv)
 	j = 0;
 	while (argv[i] != NULL)
 	{
+		if (argv[i][0] == '\0')
+			print_error();
 		while (argv[i][j] != '\0')
 		{
 			if ( !(ft_isdigit(argv[i][j])) && (argv[i][j] != ' ')

@@ -8,6 +8,8 @@ HEADERS:= -I ./includes
 CFLAGS = -Wall -Werror -Wextra -g3 $(HEADERS)
 #valgrind --leak-check=full --show-leak-kinds=all
 #CFLAGS = -Wall -Werror -Wextra $(HEADERS) 
+#ARG=$(seq -1000 1000 | sort -R | tail -n 2 | tr '\n' ' ');
+#./push_swap $ARG | ./checker_linux $ARG
 
 # Colors
 RED =			\033[0;31m
@@ -19,8 +21,9 @@ YELLOW =		\033[0;93m
 RESET=			\033[0m
 
 SRCS :=	 $(addprefix sources/, \
-	core/main.c core/utils.c	parsing/parse.c	parsing/parse_utils.c	parsing/parse_overflow.c\
-	parsing/parse_lst.c)
+	core/main.c core/utils.c	core/init.c\
+	parsing/parse.c	parsing/parse_utils.c	parsing/parse_overflow.c	parsing/parse_lst.c\
+	moves/swap.c	moves/push.c)
 
 SRCS_LIB := $(addprefix ./libft/, \
 	ft_printf.c	ft_putchar.c	ft_isdigit.c	ft_puthexadecimal.c	ft_putnbr.c\

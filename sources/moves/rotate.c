@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 10:51:38 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/18 12:16:02 by dgargant         ###   ########.fr       */
+/*   Created: 2024/07/18 09:47:46 by dgargant          #+#    #+#             */
+/*   Updated: 2024/07/22 13:01:36 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	nums_ordered(t_list **stack)
+void	rotate(t_list **stack)
 {
-	t_list	*current;
+	t_list	*first;
+	t_list	*second;
+	t_list	*last;
 
-	current = *stack;
-	while (current && current->next)
+	if (*stack != NULL && (*stack)->next != NULL)
 	{
-		if (*((int *)current->content) > *((int *)current->next->content))
-			return (0);
-		current = current->next;
+		first = *stack;
+		second = (*stack)->next;
+		last = ft_lstlast(*stack);
+		last->next = first;
+		first->next = NULL;
+		*stack = second;		
 	}
-	return (1);
+}
+
+void	ra(t_list **stack_a)
+{
+	rotate(stack_a);
+	ft_printf("ra");
+}
+
+void	rb(t_list **stack_b)
+{
+	rotate(stack_b);
+	ft_printf("rb");	
 }

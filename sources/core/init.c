@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 10:51:38 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/18 12:16:02 by dgargant         ###   ########.fr       */
+/*   Created: 2024/07/18 10:19:28 by dgargant          #+#    #+#             */
+/*   Updated: 2024/07/22 09:58:10 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	nums_ordered(t_list **stack)
+void	init_push_swap(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*current;
+	int	n_nums;
 
-	current = *stack;
-	while (current && current->next)
+	n_nums = ft_lstsize(*stack_a);
+	ft_printf("numero de digitos: %d\n", n_nums);
+	ft_printf("%p\n", *(stack_b));
+	if (!nums_ordered(stack_a))
 	{
-		if (*((int *)current->content) > *((int *)current->next->content))
-			return (0);
-		current = current->next;
+		if (n_nums == 2)
+			sa(stack_a);
+		if (n_nums == 3)
+			pb(stack_a, stack_b);
 	}
-	return (1);
 }

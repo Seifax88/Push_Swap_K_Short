@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 10:59:12 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/16 12:20:16 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/22 09:57:44 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,23 @@ void	*free_array(char **array);
 void	insert_nums(char **nums, t_list **stack_a);
 
 void	check_duplicates(t_list *stack_a);
+
+void	init_push_swap(t_list **stack_a, t_list **stack_b);
+
+int	nums_ordered(t_list **stack);
+
+void	swap(t_list **stack);
+
+void	sa(t_list **stack_a);
+
+void	sb(t_list **stack_b);
+
+void	ss(t_list **stack_a, t_list **stack_b);
+
+void	push(t_list **frm, t_list **dst);
+
+void	pa(t_list **stack_a, t_list **stack_b);
+
+void	pb(t_list **stack_a, t_list **stack_b);
 
 #endif
