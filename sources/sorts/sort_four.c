@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   sort_four.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/18 10:19:28 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/26 11:25:40 by dgargant         ###   ########.fr       */
+/*   Created: 2024/07/25 12:36:32 by dgargant          #+#    #+#             */
+/*   Updated: 2024/07/26 11:09:11 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_push_swap(t_list **stack_a, t_list **stack_b)
+void	sort_four(t_list **stack_a, t_list **stack_b, int digits)
 {
-	int	n_nums;
-
-	n_nums = ft_lstsize(*stack_a);
-	ft_printf("numero de digitos: %d\n", n_nums);
-	get_index(stack_a);
-	if (!nums_ordered(stack_a))
+	while (ft_lstsize(*stack_a) > 3)
 	{
-		if (n_nums == 2)
-			sa(stack_a);
-		if (n_nums == 3)
-			sort_three(stack_a);
-		if (n_nums == 4)
-			sort_four(stack_a, stack_b, n_nums);
-		if (n_nums == 5)
-			sort_five(stack_a, stack_b, n_nums);
+		if ((*stack_a)->index != 0)
+		{
+			if (count_index_pos(stack_a, 0) <= (digits / 2))
+				ra(stack_a);
+			else
+				rra(stack_a);
+		}
+		if ((*stack_a)->index == 0)
+			pb(stack_a, stack_b);
 	}
+	sort_three(stack_a);
+	pa(stack_b, stack_a);
 }

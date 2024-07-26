@@ -10,6 +10,7 @@ CFLAGS = -Wall -Werror -Wextra -g3 $(HEADERS)
 #CFLAGS = -Wall -Werror -Wextra $(HEADERS) 
 #ARG=$(seq -1000 1000 | sort -R | tail -n 2 | tr '\n' ' ');
 #./push_swap $ARG | ./checker_linux $ARG
+#% ARG=$(seq -1000 1000 | sort -R | tail -n 500 | tr '\n' ' '); ./push_swap $ARG > out
 
 # Colors
 RED =			\033[0;31m
@@ -23,7 +24,8 @@ RESET=			\033[0m
 SRCS :=	 $(addprefix sources/, \
 	core/main.c core/utils.c	core/init.c\
 	parsing/parse.c	parsing/parse_utils.c	parsing/parse_overflow.c	parsing/parse_lst.c\
-	moves/swap.c	moves/push.c)
+	moves/swap.c	moves/push.c	moves/rotate.c	moves/reverse_rotate.c\
+	sorts/sort_three.c	sorts/sort_four.c	sorts/sort_five.c)
 
 SRCS_LIB := $(addprefix ./libft/, \
 	ft_printf.c	ft_putchar.c	ft_isdigit.c	ft_puthexadecimal.c	ft_putnbr.c\

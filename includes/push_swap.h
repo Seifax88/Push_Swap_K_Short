@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 10:59:12 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/22 09:57:44 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/26 10:43:14 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	nums_are_ok(char **nums);
 
 int	check_overflow(char *nums);
 
+int	check_len(char *nums);
+
 void	parse_split(char **argv, t_list **stack_a);
 
 void	*free_array(char **array);
@@ -54,8 +56,34 @@ void	ss(t_list **stack_a, t_list **stack_b);
 
 void	push(t_list **frm, t_list **dst);
 
-void	pa(t_list **stack_a, t_list **stack_b);
+void	pa(t_list **stack_b, t_list **stack_a);
 
 void	pb(t_list **stack_a, t_list **stack_b);
+
+void	rotate(t_list **stack);
+
+void	ra(t_list **stack_a);
+
+void	rb(t_list **stack_b);
+
+void	rr(t_list **stack_a, t_list **stack_b);
+
+void	rvs_rotate(t_list **stack);
+
+void	rra(t_list **stack_a);
+
+void	rrb(t_list **stack_b);
+
+void	rrr(t_list **stack_a, t_list **stack_b);
+
+void	get_index(t_list **stack);
+
+void	sort_three(t_list **stack_a);
+
+int	count_index_pos(t_list **stack, int index);
+
+void	sort_four(t_list **stack_a, t_list **stack_b, int digits);
+
+void	sort_five(t_list **stack_a, t_list **stack_b, int digits);
 
 #endif

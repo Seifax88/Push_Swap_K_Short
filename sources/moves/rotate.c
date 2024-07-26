@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 09:47:46 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/22 13:01:36 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/23 12:21:22 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,18 @@ void	rotate(t_list **stack)
 void	ra(t_list **stack_a)
 {
 	rotate(stack_a);
-	ft_printf("ra");
+	ft_printf("ra\n");
 }
 
 void	rb(t_list **stack_b)
 {
 	rotate(stack_b);
-	ft_printf("rb");	
+	ft_printf("rb\n");	
+}
+
+void	rr(t_list **stack_a, t_list **stack_b)
+{
+	rotate(stack_a);
+	rotate(stack_b);
+	ft_printf("rr\n");
 }
