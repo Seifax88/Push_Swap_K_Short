@@ -31,7 +31,7 @@ SRCS_LIB := $(addprefix ./libft/, \
 	ft_printf.c	ft_putchar.c	ft_isdigit.c	ft_puthexadecimal.c	ft_putnbr.c\
 	ft_putpadress.c	ft_putstr.c	ft_putunbr.c	ft_split.c	ft_strlen.c\
 	ft_atoi.c	ft_atoll.c	ft_lstadd_back_bonus.c	ft_lstadd_front_bonus.c	ft_lstclear_bonus.c\
-	ft_lstlast_bonus.c	ft_lstnew_bonus.c	ft_lstsize_bonus.c)
+	ft_lstlast_bonus.c	ft_lstnew_bonus.c	ft_lstsize_bonus.c	ft_sqrt.c)
 
 OBJS = $(SRCS:.c=.o) $(SRCS_LIB:.c=.o)
 

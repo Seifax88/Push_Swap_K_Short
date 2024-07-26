@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 10:40:51 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/26 11:07:33 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/26 12:36:26 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void	sort_five(t_list **stack_a, t_list **stack_b, int digits)
 		if (((*stack_a)->index == 0) || ((*stack_a)->index == 1))
 			pb(stack_a, stack_b);
 	}
-	sort_three(stack_a);
+	if (!nums_ordered(stack_a))
+		sort_three(stack_a);
 	if (nums_ordered(stack_b))
 		sb(stack_b);
 	pa(stack_b, stack_a);

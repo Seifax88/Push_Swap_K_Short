@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_four.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 12:36:32 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/26 12:37:15 by dgargant         ###   ########.fr       */
+/*   Created: 2024/07/26 16:47:15 by dgargant          #+#    #+#             */
+/*   Updated: 2024/07/26 16:47:35 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-void	sort_four(t_list **stack_a, t_list **stack_b, int digits)
+int	ft_sqrt(int number)
 {
-	while (ft_lstsize(*stack_a) > 3)
+	int	i;
+
+	if (number < 4)
+		return (1);
+	i = 2;
+	while (i * i < number)
+		i++;
+	if (i * i > number)
 	{
-		if ((*stack_a)->index != 0)
-		{
-			if (count_index_pos(stack_a, 0) <= (digits / 2))
-				ra(stack_a);
-			else
-				rra(stack_a);
-		}
-		if ((*stack_a)->index == 0)
-			pb(stack_a, stack_b);
+		if ((i * i - number) < ((i - 1) * (i - 1) + (-number)))
+			return (i);
 	}
-	if (!nums_ordered(stack_a))
-		sort_three(stack_a);
-	pa(stack_b, stack_a);
+	return (i - 1);
 }

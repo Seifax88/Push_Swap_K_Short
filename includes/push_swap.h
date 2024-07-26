@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 10:59:12 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/26 10:43:14 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/26 16:57:35 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	main(int argc, char **argv);
 void	parse_init(char **argv, t_list **stack_a);
 
 void	check_letrs(char **argv);
+
+void	check_digits(char **argv);
 
 void	print_error();
 

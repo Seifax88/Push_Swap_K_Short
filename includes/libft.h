@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 09:09:53 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/15 09:53:54 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/26 16:47:51 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 
 void	ft_lstclear(t_list **lst, void (*del)(void *));
+
+int	ft_sqrt(int number);
 
 #endif

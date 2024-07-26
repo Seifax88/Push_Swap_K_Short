@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 12:43:40 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/18 15:16:01 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/26 16:57:49 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ void	parse_split(char **argv, t_list **stack_a)
 void	parse_init(char **argv, t_list **stack_a)
 {
 	check_letrs(argv);
+	check_digits(argv);
 	parse_split(argv, stack_a);
 	check_duplicates(*stack_a);
 }
