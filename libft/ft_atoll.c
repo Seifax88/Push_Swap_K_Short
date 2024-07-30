@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 10:13:02 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/12 09:44:26 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/30 10:57:11 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long long	ft_atoll(const char *str)
 {
-	size_t	i;
-	int	neg;
+	size_t		i;
+	int			neg;
 	long long	nb;
 
 	i = 0;

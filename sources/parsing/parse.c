@@ -6,31 +6,31 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 12:43:40 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/26 16:57:49 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/30 11:03:04 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void	check_letrs(char **argv)
+void	check_letrs(char **argv, t_list **stack_a)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	j = 0;
 	while (argv[i] != NULL)
 	{
 		if (argv[i][0] == '\0')
-			print_error();
+			print_error(stack_a);
 		while (argv[i][j] != '\0')
 		{
-			if ( !(ft_isdigit(argv[i][j])) && (argv[i][j] != ' ')
+			if (!(ft_isdigit(argv[i][j])) && (argv[i][j] != ' ')
 				&& (argv[i][j] != '-') && (argv[i][j] != '+'))
-				print_error();
+				print_error(stack_a);
 			j++;
-		} 
+		}
 		j = 0;
 		i++;
 	}
@@ -38,8 +38,8 @@ void	check_letrs(char **argv)
 
 int	nums_are_ok(char **nums)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -76,7 +76,7 @@ void	insert_nums(char **nums, t_list **stack_a)
 			ft_lstclear(stack_a, free);
 			free_array(nums);
 			free(nums);
-			print_error();
+			print_error(stack_a);
 		}
 		ft_lstadd_back(stack_a, node);
 		i++;
@@ -85,8 +85,8 @@ void	insert_nums(char **nums, t_list **stack_a)
 
 void	parse_split(char **argv, t_list **stack_a)
 {
-	int 	i;
-	char 	**nums;
+	int		i;
+	char	**nums;
 
 	i = 1;
 	nums = NULL;
@@ -96,7 +96,7 @@ void	parse_split(char **argv, t_list **stack_a)
 		if (nums_are_ok(nums))
 		{
 			free_array(nums);
-			print_error();
+			print_error(stack_a);
 		}
 		else
 		{
@@ -109,8 +109,8 @@ void	parse_split(char **argv, t_list **stack_a)
 
 void	parse_init(char **argv, t_list **stack_a)
 {
-	check_letrs(argv);
-	check_digits(argv);
+	check_letrs(argv, stack_a);
+	check_digits(argv, stack_a);
 	parse_split(argv, stack_a);
 	check_duplicates(*stack_a);
 }

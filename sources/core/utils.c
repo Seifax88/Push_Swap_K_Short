@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 10:51:38 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/25 11:35:53 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/30 10:58:57 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	get_index(t_list **stack)
 		{
 			if (*(int *)current->content > *(int *)temp->content)
 				count++;
-			temp = temp->next; 
+			temp = temp->next;
 		}
 		current->index = count;
 		current = current->next;

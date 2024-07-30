@@ -6,23 +6,14 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 11:18:34 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/25 11:18:51 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/30 11:23:20 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_list **stack_a)
+void	order_nums(t_list **stack_a, int frs, int sec, int thrd)
 {
-	t_list	*head;
-	int		frs;
-	int		sec;
-	int		thrd;
-
-	head = *stack_a;
-	frs = *(int *)head->content;
-	sec = *(int *)head->next->content;
-	thrd =  *(int *)head->next->next->content;
 	if ((thrd > sec) && (thrd > frs))
 		sa(stack_a);
 	if ((sec > thrd) && (sec > frs))
@@ -45,5 +36,18 @@ void	sort_three(t_list **stack_a)
 		else
 			ra(stack_a);
 	}
-	
+}
+
+void	sort_three(t_list **stack_a)
+{
+	t_list	*head;
+	int		frs;
+	int		sec;
+	int		thrd;
+
+	head = *stack_a;
+	frs = *(int *)head->content;
+	sec = *(int *)head->next->content;
+	thrd = *(int *)head->next->next->content;
+	order_nums(stack_a, frs, sec, thrd);
 }

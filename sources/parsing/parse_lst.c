@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 10:48:12 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/16 12:32:09 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/30 09:50:49 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ void	check_duplicates(t_list *stack_a)
 		{
 			compare_num = *((int *)compare->content);
 			if (current_num == compare_num)
-			{
-				ft_lstclear(&stack_a, free);
-				print_error();
-			}
+				print_error(&stack_a);
 			compare = compare->next;
 		}
 		current = current->next;

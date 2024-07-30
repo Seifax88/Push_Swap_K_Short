@@ -6,12 +6,11 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 12:46:46 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/23 10:46:22 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/30 11:04:35 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 int	check_len(char *nums)
 {
@@ -20,7 +19,7 @@ int	check_len(char *nums)
 
 	i = 0;
 	count = 0;
-	while(nums[i] == '+' || nums[i] == '-')
+	while (nums[i] == '+' || nums[i] == '-')
 		i++;
 	while (nums[i] == '0')
 		i++;
@@ -31,7 +30,7 @@ int	check_len(char *nums)
 	}
 	if (count >= 11)
 		return (1);
-	return(0);
+	return (0);
 }
 
 int	check_overflow(char *nums)

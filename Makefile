@@ -25,7 +25,7 @@ SRCS :=	 $(addprefix sources/, \
 	core/main.c core/utils.c	core/init.c\
 	parsing/parse.c	parsing/parse_utils.c	parsing/parse_overflow.c	parsing/parse_lst.c\
 	moves/swap.c	moves/push.c	moves/rotate.c	moves/reverse_rotate.c\
-	sorts/sort_three.c	sorts/sort_four.c	sorts/sort_five.c)
+	sorts/sort_three.c	sorts/sort_four.c	sorts/sort_five.c	sorts/k_sort.c)
 
 SRCS_LIB := $(addprefix ./libft/, \
 	ft_printf.c	ft_putchar.c	ft_isdigit.c	ft_puthexadecimal.c	ft_putnbr.c\

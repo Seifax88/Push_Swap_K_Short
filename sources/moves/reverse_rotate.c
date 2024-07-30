@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 09:48:30 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/23 12:24:35 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/30 11:01:05 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	rvs_rotate(t_list **stack)
 {
-	t_list *first;
-	t_list *last;
-	
+	t_list	*first;
+	t_list	*last;
+
 	if (*stack != NULL && (*stack)->next != NULL)
 	{
 		first = *stack;
@@ -25,7 +25,7 @@ void	rvs_rotate(t_list **stack)
 		last = first->next;
 		first->next = NULL;
 		last->next = *stack;
-		*stack = last; 
+		*stack = last;
 	}
 }
 
