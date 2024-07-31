@@ -6,7 +6,7 @@
 /*   By: dgargant <dgargant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 09:09:04 by dgargant          #+#    #+#             */
-/*   Updated: 2024/07/30 11:03:57 by dgargant         ###   ########.fr       */
+/*   Updated: 2024/07/31 11:11:12 by dgargant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_error(t_list **stack_a)
 {
 	if (stack_a != NULL)
 		ft_lstclear(stack_a, free);
-	write(2, "Error\n", 7);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
